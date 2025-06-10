@@ -1,0 +1,189 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #474143;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: 'Noto Sans JP', 'Meiryo', sans-serif;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.message {
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 120px;
+  letter-spacing: 0.02em;
+  z-index: 2;
+}
+.cup-svg {
+  display: block;
+  margin: 0 auto;
+  width: 320px;
+  height: 220px;
+}
+
+/* --- 2画面目 --- */
+.select-container {
+  background: #474143;
+}
+.select-message {
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 80px;
+  letter-spacing: 0.02em;
+}
+.select-buttons {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  align-items: center;
+}
+.select-btn {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #fff;
+  background: transparent;
+  text-align: center;
+  transition: border-color 0.2s, color 0.2s;
+  box-sizing: border-box;
+}
+.select-btn.coffee {
+  border-color: #fff;
+  color: #fff;
+}
+.select-btn.latte {
+  border-color: #e6b422;
+  color: #e6b422;
+}
+.select-btn.hot {
+  border-color: #ff3b1f;
+  color: #ff3b1f;
+}
+.select-btn.ice {
+  border-color: #3ba3ff;
+  color: #3ba3ff;
+}
+.select-btn.regular,
+.select-btn.large {
+  border-color: #fff;
+  color: #fff;
+}
+.select-btn.regular {
+  width: 150px;
+  height: 150px;
+  font-size: 1.5rem;
+}
+.select-btn span {
+  display: block;
+  line-height: 1;
+}
+.select-divider {
+  width: 80%;
+  height: 0;
+  border-bottom: 3px solid #ccc;
+  margin: 0 auto 50px auto;
+}
+.select-divider.red {
+  border-bottom: 3px solid #d6452b;
+}
+.select-btn.light {
+  border-color: #fff;
+  color: #fff;
+  background: #a88354;
+}
+.select-btn.medium {
+  border-color: #fff;
+  color: #fff;
+  background: #7b5526;
+}
+.select-btn.bold {
+  border-color: #fff;
+  color: #fff;
+  background: #5b3a13;
+}
+
+/* --- 抽出中画面 --- */
+.brew-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+}
+.brew-main {
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.brew-sub {
+  color: #fff;
+  font-size: 1.4rem;
+  text-align: center;
+}
+.brew-drops {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.brew-drops svg {
+  display: block;
+}
+
+/* --- 完了画面 --- */
+.complete-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+}
+.complete-main {
+  color: #fff;
+  font-size: 2.6rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+.complete-sub {
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.complete-cup {
+  margin-top:30px;
+  display: flex;
+  justify-content: center;
+}
+.complete-cup svg {
+  display: block;
+  transform: scale(1.5);
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>カップをセットして蓋を閉めてください</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" id="step1">
+    <div class="message">カップをセットして蓋を閉めてください</div>
+    <svg class="cup-svg" viewBox="0 0 320 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="160" cy="50" rx="110" ry="35" fill="#E5E5E5" stroke="#fff" stroke-width="4"/>
+      <line x1="54" y1="60" x2="80" y2="210" stroke="#fff" stroke-width="4" />
+      <line x1="266" y1="60" x2="240" y2="210" stroke="#fff" stroke-width="4" />
+    </svg>
+  </div>
+  <div class="container select-container" id="step2" style="display:none;">
+    <div class="select-message">購入した方を選んでください</div>
+    <div class="select-buttons">
+      <div class="select-btn coffee" id="coffeeBtn">
+        <span>COFFEE</span>
+      </div>
+      <div class="select-btn latte">
+        <span>CAFE<br>LATTE</span>
+      </div>
+    </div>
+  </div>
+  <div class="container select-container" id="step3" style="display:none;">
+    <div class="select-message">購入した方を選んでください</div>
+    <div class="select-divider"></div>
+    <div class="select-buttons">
+      <div class="select-btn hot">
+        <span>HOT</span>
+      </div>
+      <div class="select-btn ice">
+        <span>ICE</span>
+      </div>
+    </div>
+  </div>
+  <div class="container select-container" id="step4" style="display:none;">
+    <div class="select-message">サイズを選んでください</div>
+    <div class="select-divider red"></div>
+    <div class="select-buttons">
+      <div class="select-btn regular">
+        <span>REGULAR</span>
+      </div>
+      <div class="select-btn large">
+        <span>LARGE</span>
+      </div>
+    </div>
+  </div>
+  <div class="container select-container" id="step5" style="display:none;">
+    <div class="select-message">お好みの濃さはありますか？</div>
+    <div class="select-buttons">
+      <div class="select-btn light">
+        <span>LIGHT</span>
+      </div>
+      <div class="select-btn medium">
+        <span>MEDIUM</span>
+      </div>
+      <div class="select-btn bold">
+        <span>BOLD</span>
+      </div>
+    </div>
+  </div>
+  <div class="container" id="step6" style="display:none; flex-direction:column; align-items:center; justify-content:center;">
+    <div class="brew-message">
+      <div class="brew-main">抽出しています</div>
+      <div class="brew-sub">Now Brewing...</div>
+    </div>
+    <div class="brew-drops">
+      <svg width="50" height="70" viewBox="0 0 50 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M25 10 Q40 30 37 50 Q25 65 13 50 Q10 30 25 10 Z" fill="#E5E5E5"/>
+      </svg>
+      <svg width="60" height="90" viewBox="0 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30 15 Q52 45 46 70 Q30 88 14 70 Q8 45 30 15 Z" fill="#E5E5E5"/>
+      </svg>
+      <svg width="70" height="110" viewBox="0 0 70 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M35 20 Q62 60 54 95 Q35 110 16 95 Q8 60 35 20 Z" fill="#E5E5E5"/>
+      </svg>
+    </div>
+  </div>
+  <div class="container" id="step7" style="display:none; flex-direction:column; align-items:center; justify-content:center;">
+    <div class="complete-message">
+      <div class="complete-main">おいしいコーヒーが出来上がりました</div>
+      <div class="complete-sub">Have a nice day!</div>
+    </div>
+    <!-- 湯気SVGをカップと文字の間に追加 -->
+    <div class="complete-steam" style="display: flex; flex-direction: row; justify-content: center; align-items: flex-end; gap: 32px; margin-bottom: 18px; margin-top: 10px;">
+      <svg width="60" height="120" viewBox="0 0 60 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 110 Q10 80 30 70 Q50 60 30 30 Q15 10 35 10" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/>
+      </svg>
+      <svg width="40" height="80" viewBox="0 0 40 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 70 Q8 55 20 50 Q32 45 20 25 Q10 10 25 10" stroke="#fff" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="complete-cup">
+      <svg width="240" height="220" viewBox="0 0 240 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- カップ上部楕円 -->
+        <ellipse cx="120" cy="90" rx="70" ry="22" fill="#474143" stroke="#fff" stroke-width="4"/>
+        <!-- コーヒー面 -->
+        <ellipse cx="120" cy="95" rx="45" ry="10" fill="#E5E5E5" opacity="0.5"/>
+        <!-- カップ側面 -->
+        <line x1="50" y1="90" x2="70" y2="200" stroke="#fff" stroke-width="4" />
+        <line x1="190" y1="90" x2="170" y2="200" stroke="#fff" stroke-width="4" />
+      </svg>
+    </div>
+  </div>
+  <script>
+    setTimeout(() => {
+      document.getElementById('step1').style.display = 'none';
+      document.getElementById('step2').style.display = 'flex';
+    }, 2500); // 2.5秒後に切り替え
+
+    document.getElementById('coffeeBtn').addEventListener('click', function() {
+      document.getElementById('step2').style.display = 'none';
+      document.getElementById('step3').style.display = 'flex';
+    });
+    document.querySelector('.select-btn.hot').addEventListener('click', function() {
+      document.getElementById('step3').style.display = 'none';
+      document.getElementById('step4').style.display = 'flex';
+    });
+    document.querySelector('.select-btn.regular').addEventListener('click', function() {
+      document.getElementById('step4').style.display = 'none';
+      document.getElementById('step5').style.display = 'flex';
+    });
+    document.querySelector('.select-btn.light').addEventListener('click', function() {
+      document.getElementById('step5').style.display = 'none';
+      document.getElementById('step6').style.display = 'flex';
+      setTimeout(() => {
+        document.getElementById('step6').style.display = 'none';
+        document.getElementById('step7').style.display = 'flex';
+      }, 3000); // 3秒後に完了画面へ
+    });
+  </script>
+</body>
+</html>
